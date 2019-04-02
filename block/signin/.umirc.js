@@ -13,7 +13,7 @@ export default {
   alias: {
     Components: path.resolve(baseModulesPath, 'componets'),
     Utils: path.resolve(baseModulesPath, 'utils'),
-    Static: path.resolve(baseModulesPath, 'Static'),
+    Assets: path.resolve(baseModulesPath, 'assets'),
   },
   plugins: [['umi-plugin-react', umiPluginReact], ['umi-plugin-block-dev', umiPluginBlockDev]],
 };

@@ -7,19 +7,14 @@ export default {
   namespace: 'signin',
   state: defState,
   effects: {
-    *login({ payload }, { call, put }) {
+    *login({ payload }, { call }) {
       const sendRules = [{ name: 'account' }, { name: 'password' }];
-      const response = yield call(services.login, format(payload, sendRules));
-      console.log(response);
-      // return;
-      const { success, data, message } = response;
-      if (success) {
-        // storage.local.set('user', data);
-        // storage.cookie.remove('token').set('token', data.token, 0.5);
-        // yield put({ type: 'app/STATE', payload: { user: data } });
-        return data;
+      const res = yield call(services.login, format(payload, sendRules));
+
+      if (res.success) {
+        return res.data;
       } else {
-        throw message;
+        throw res.message;
       }
     },
   },

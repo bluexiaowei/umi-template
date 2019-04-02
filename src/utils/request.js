@@ -2,12 +2,15 @@
 import axios from 'axios';
 
 function request(options) {
-  options.baseURL = '/api';
+  if (window.URL) {
+    options.baseURL = window.URL;
+  }
   return axios(options)
     .then(function(response) {
-      return response.data;
+      const res = { success: true, data: {}, message: '' };
+      return { ...res, ...response.data };
     })
-    .catch(function({ config, request, response }) {
+    .catch(function({ config, request = {}, response = {} }) {
       const { status } = request;
       const res = { success: false, data: {}, message: '未知错误' };
       if (status === 0) {

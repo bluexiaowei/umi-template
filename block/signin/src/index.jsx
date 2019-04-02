@@ -61,6 +61,7 @@ class Signin extends React.PureComponent {
     );
   }
 
+  // 用户登录
   submitForm = () => {
     const { form, dispatch, history } = this.props;
     form.validateFields((err, values) => {

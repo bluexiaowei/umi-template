@@ -1,14 +1,13 @@
 import { delay } from 'roadhog-api-doc';
-import { mock } from 'mockjs';
 
 const proxy = {
-  'POST /api/login': function(req, res) {
-    // console.log(req);
-    // res.status = 500;
-    // console.log(Object.keys(res));
-
-    res.status(500);
-    res.json({ success: false });
+  'POST /login': function(req, res) {
+    const { account, password } = req.body;
+    if (account !== 'admin' || password !== 'admin') {
+      res.json({ success: false, message: '用户名密码错误 \n A:admin P: admin' });
+    } else {
+      res.json({ success: true });
+    }
   },
 };
 

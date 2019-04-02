@@ -1,23 +1,23 @@
 // ref: https://umijs.org/config/
 // ref: https://umijs.org/plugin/umi-plugin-react.html
-const { URL } = process.env;
-
+const path = require('path');
+const { URL, TITLE } = process.env;
 const umiPluginReact = {
   antd: true,
   dva: true,
   dynamicImport: false,
-  title: 'base-modules',
+  title: TITLE,
   dll: false,
-  routes: { exclude: [/components\//] },
+  routes: { exclude: [/components/, /model/, /services/, /locales/] },
 };
 
 export default {
   treeShaking: true,
-  context: { URL, TITLE: umiPluginReact.title },
+  context: { URL, TITLE },
   alias: {
-    Components: 'src/componets/',
-    Utils: 'src/utils/',
-    Static: 'src/static/',
+    Components: path.resolve(__dirname, 'src/componets/'),
+    Utils: path.resolve(__dirname, 'src/utils/'),
+    Assets: path.resolve(__dirname, 'src/assets/'),
   },
   publicPath: './',
   plugins: [['umi-plugin-react', umiPluginReact]],
