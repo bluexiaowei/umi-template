@@ -1,0 +1,25 @@
+{
+  "name": "@umi-block/signin",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "authors": {
+    "name": "",
+    "email": ""
+  },
+  "repository": "umijs/umi-blocks/signin",
+  "scripts": {
+    "dev": "umi dev"
+  },
+  "dependencies": {
+    "react": ">=16.0.0",
+    "umi-plugin-react": "^1.7.2"
+  },
+  "devDependencies": {
+    "mockjs": "^1.0.1-beta3",
+    "roadhog-api-doc": "^1.1.2",
+    "umi": "^2.0.0",
+    "umi-plugin-block-dev": "^1.0.0"
+  },
+  "license": "MIT"
+}
