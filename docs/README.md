@@ -14,6 +14,23 @@
 
 > 在 umi 中，区块是指页面级别的可复用的代码。umi 定义了一个区块的规范，你可以通过 umi 能够快速简单的在你的项目中添加区块，用于快速的开始一个页面的开发。
 
+#### umi help block
+
+```bash
+# Add block
+umi block add demo
+umi block add ant-design-pro/Monitor
+
+# Add block with full url
+umi block add https://github.com/umijs/umi-blocks/tree/master/demo
+
+# Add block with specified route path
+umi block add demo --path /foo/bar
+
+# List all blocks
+umi list
+```
+
 #### signin 登录模块
 
 ```bash
@@ -31,3 +48,4 @@ npx umi block add https://gitlab.com/bluexiaowei/umi-template/tree/master/block/
 ### 相关资料
 
 - [UmiJS](https://umijs.org)
+- [create-shurui-cli](https://gitlab.com/shuruitech/omega-infrastructure/frontend/create-shurui-cli)
