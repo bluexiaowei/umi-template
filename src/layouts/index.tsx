@@ -7,7 +7,7 @@ type LayoutComponent<P> = React.SFC<P>;
 interface LayoutProps extends React.Props<any> {
   history?: History;
   location: Location;
-  children: JSX.Element;
+  children: React.Element;
 }
 
 const AppLayout: LayoutComponent<LayoutProps> = props => {

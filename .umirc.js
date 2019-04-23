@@ -5,9 +5,8 @@ const { URL, TITLE } = process.env;
 const umiPluginReact = {
   antd: true,
   dva: true,
-  dynamicImport: false,
+  locale: true,
   title: TITLE,
-  dll: false,
   routes: { exclude: [/components/, /model/, /services/, /locales/] },
 };
 
