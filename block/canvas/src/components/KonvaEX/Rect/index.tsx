@@ -4,8 +4,8 @@ import Konva from 'konva';
 import { Rect } from 'react-konva';
 import uuid from 'Utils/uuid';
 
-import onDragMove from 'utils/onDragMove';
-import onDragEnd from 'utils/onDragEnd';
+import onDragMove from '../../utils/onDragMove';
+import onDragEnd from '../../utils/onDragEnd';
 
 interface Props {
   id: string;

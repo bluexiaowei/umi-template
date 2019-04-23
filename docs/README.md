@@ -40,6 +40,7 @@ npx umi block add https://gitlab.com/bluexiaowei/umi-template/tree/master/block/
 #### TO DO for Block
 
 - [x] Signin
+- [x] Canvas
 - [ ] Registered
 - [ ] Settings
 

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Stage from './components/Stage/index';
-import styles from './index.less';
 
 class CanvasPage extends React.Component {
   constructor(props) {

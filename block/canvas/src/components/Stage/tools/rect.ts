@@ -1,15 +1,5 @@
 import Konva from 'konva';
 import KonvaEX from '../../KonvaEX';
-import offsetPoint from '../../utils/offsetPoint';
-import hidePointer from '../../utils/hidePointer';
-
-const rect = {
-  key: 'rect',
-  icon: 'mdi-cursor-move',
-  beforeFn,
-  afterFn,
-  stageProps: { onMouseDown, onMouseMove, onMouseUp },
-};
 
 function beforeFn(stage: any) {
   stage.content.style.cursor = 'crosshair';
@@ -95,4 +85,10 @@ function onMouseUp(e) {
   stage.content.style.cursor = 'crosshair';
 }
 
-module.exports = rect;
+export default {
+  key: 'rect',
+  icon: 'mdi-cursor-move',
+  beforeFn,
+  afterFn,
+  stageProps: { onMouseDown, onMouseMove, onMouseUp },
+};

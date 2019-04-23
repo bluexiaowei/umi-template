@@ -1,6 +1,6 @@
 import screenfull from 'screenfull';
 
-module.exports = {
+export default {
   key: 'fullScreen',
   icon: 'mdi-cursor-move',
   onClick: function() {

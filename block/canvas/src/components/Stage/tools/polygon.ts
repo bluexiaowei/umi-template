@@ -2,15 +2,6 @@ import Konva from 'konva';
 import KonvaEX from '../../KonvaEX';
 import offsetPoint from '../../utils/offsetPoint';
 import darwPoints from '../../utils/darwPoints';
-// import hidePointer from './utils/hidePointer';
-
-module.exports = {
-  key: 'polygon',
-  icon: 'mdi-cursor-move',
-  beforeFn,
-  afterFn,
-  stageProps: { onMouseDown, onMouseMove },
-};
 
 function beforeFn(stage: any) {
   stage.content.style.cursor = 'crosshair';
@@ -146,3 +137,11 @@ function onMouseMove() {
     this.operating.mouseStart = stagePointerPos;
   }
 }
+
+export default {
+  key: 'polygon',
+  icon: 'mdi-cursor-move',
+  beforeFn,
+  afterFn,
+  stageProps: { onMouseDown, onMouseMove },
+};

@@ -1,6 +1,6 @@
 import zoom from '../../utils/zoom';
 
-module.exports = {
+export default {
   key: 'zoomIn',
   icon: 'mdi-cursor-move',
   onClick: function(stage: any) {

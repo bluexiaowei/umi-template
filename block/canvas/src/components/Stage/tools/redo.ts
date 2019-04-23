@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   key: 'redo',
   icon: 'mdi-undo',
   onClick: function(stage: any, context: any) {

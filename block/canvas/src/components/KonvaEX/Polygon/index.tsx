@@ -4,8 +4,8 @@ import Konva from 'konva';
 import { Line } from 'react-konva';
 import uuid from 'Utils/uuid';
 
-import onDragMove from 'utils/onDragMove';
-import onDragEnd from 'utils/onDragEnd';
+import onDragMove from '../../utils/onDragMove';
+import onDragEnd from '../../utils/onDragEnd';
 
 class PolygonEx extends React.PureComponent<Konva.LineConfig> {
   static create: (point: { x: number; y: number }) => { type: string; id: any; points: number[] };

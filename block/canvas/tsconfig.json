@@ -9,8 +9,6 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "utils/*": ["./src/components/utils/*"],
-      "components/*": ["./src/components/*"],
       "Utils/*": ["../../src/utils/*"]
     },
     "allowSyntheticDefaultImports": true

@@ -1,21 +1,6 @@
-import KonvaEx from 'components/KonvaEx';
-import zoom from 'utils/zoom';
-import darwPoints from 'utils/darwPoints';
-import offsetPoint from 'utils/offsetPoint';
-
-const defaultOpe = {
-  key: 'move',
-  icon: 'mdi-cursor-move',
-  beforeFn,
-  afterFn,
-  stageProps: {
-    onWheel,
-    onMouseDown,
-    onMouseMove,
-    onMouseUp,
-    onDblClick,
-  },
-};
+import zoom from '../../utils/zoom';
+import darwPoints from '../../utils/darwPoints';
+import offsetPoint from '../../utils/offsetPoint';
 
 function beforeFn(stage: any) {
   const areas: any[] = stage.find('.area');
@@ -157,4 +142,16 @@ function onDblClick({ target }) {
   }
 }
 
-module.exports = defaultOpe;
+export default {
+  key: 'move',
+  icon: 'mdi-cursor-move',
+  beforeFn,
+  afterFn,
+  stageProps: {
+    onWheel,
+    onMouseDown,
+    onMouseMove,
+    onMouseUp,
+    onDblClick,
+  },
+};

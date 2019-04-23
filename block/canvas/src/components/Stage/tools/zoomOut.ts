@@ -1,6 +1,6 @@
 import zoom from '../../utils/zoom';
 
-module.exports = {
+export default {
   key: 'zoomOut',
   onClick(stage: any) {
     const areas = stage.find('.area');

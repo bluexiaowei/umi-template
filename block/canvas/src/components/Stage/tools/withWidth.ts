@@ -1,5 +1,5 @@
 import fullView from '../../utils/fullView';
-module.exports = {
+export default {
   key: 'withWidth',
   icon: 'mdi-cursor-move',
   onClick: function(stage: any) {

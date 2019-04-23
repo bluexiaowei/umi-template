@@ -11,6 +11,20 @@ import fullView from '../utils/fullView';
 import WidthHistory from '../utils/WidthHistory';
 import styles from './index.less';
 
+// tool
+import move from './tools/move';
+import rect from './tools/rect';
+import polygon from './tools/polygon';
+import zoomIn from './tools/zoomIn';
+import zoomOut from './tools/zoomOut';
+import view from './tools/view';
+import reset from './tools/reset';
+import fullScreen from './tools/fullScreen';
+import withHeight from './tools/withHeight';
+import withWidth from './tools/withWidth';
+import undo from './tools/undo';
+import redo from './tools/redo';
+
 interface Element {
   id: string;
   type: string;
@@ -71,22 +85,19 @@ class StageEx extends React.Component<StageExPopos> {
   stage: React.RefObject<RKonva.Stage> = React.createRef();
   storageData = new WidthHistory();
   tools: any[] = [
-    'move',
-    'rect',
-    'polygon',
-    'zoomIn',
-    'zoomOut',
-    'view',
-    'reset',
-    'fullScreen',
-    'withHeight',
-    'withWidth',
-    'undo',
-    'redo',
-  ].map(item => {
-    const Tool = require(`./tools/${item}.ts`);
-    return Tool;
-  });
+    move,
+    rect,
+    polygon,
+    zoomIn,
+    zoomOut,
+    view,
+    reset,
+    fullScreen,
+    withHeight,
+    withWidth,
+    undo,
+    redo,
+  ];
 
   componentDidMount() {
     const stage = this.stage.current;

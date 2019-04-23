@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   key: 'view',
   icon: 'mdi-cursor-move',
   onClick: function(stage: any, context: any) {
