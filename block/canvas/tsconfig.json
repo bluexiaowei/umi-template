@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "utils/*": ["./src/components/utils/*"],
+      "components/*": ["./src/components/*"],
+      "Utils/*": ["../../src/utils/*"]
+    },
+    "allowSyntheticDefaultImports": true
+  }
+}

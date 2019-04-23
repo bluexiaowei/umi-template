@@ -1,0 +1,30 @@
+{
+  "name": "@umi-block/canvas",
+  "version": "0.0.1",
+  "description": "canvas 画布操作",
+  "main": "src/index.js",
+  "authors": {
+    "name": "",
+    "email": ""
+  },
+  "repository": "umijs/umi-blocks/canvas",
+  "scripts": {
+    "dev": "umi dev"
+  },
+  "dependencies": {
+    "konva": "^3.2.4",
+    "lodash": "^4.17.11",
+    "react": ">=16.0.0",
+    "react-konva": "^16.8.6",
+    "recompose": "^0.30.0",
+    "screenfull": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.123",
+    "@types/react": "^16.8.13",
+    "@types/screenfull": "^4.1.0",
+    "umi": "^2.0.0",
+    "umi-plugin-block-dev": "^1.0.0"
+  },
+  "license": "MIT"
+}
