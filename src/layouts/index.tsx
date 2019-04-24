@@ -2,15 +2,13 @@ import React from 'react';
 import BlankLayout from './BlankLayout';
 import ClassicLayout from './ClassicLayout';
 
-type LayoutComponent<P> = React.SFC<P>;
-
-interface LayoutProps extends React.Props<any> {
+interface Props {
   history?: History;
   location: Location;
-  children: React.Element;
+  children: JSX.Element;
 }
 
-const AppLayout: LayoutComponent<LayoutProps> = props => {
+export default (props: Props): JSX.Element => {
   const { children, location } = props;
   const { pathname } = location;
   const BlankLayouts = ['/blank'];
@@ -21,5 +19,3 @@ const AppLayout: LayoutComponent<LayoutProps> = props => {
     return <ClassicLayout children={children} />;
   }
 };
-
-export default AppLayout;

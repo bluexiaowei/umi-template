@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from 'antd';
 
-const ClassicLayout = ({ children }) => {
+export default ({ children }: { children: JSX.Element }): JSX.Element => {
   return (
     <Layout style={{ height: '100%' }}>
       <Layout.Sider>Sider</Layout.Sider>
@@ -12,5 +12,3 @@ const ClassicLayout = ({ children }) => {
     </Layout>
   );
 };
-
-export default ClassicLayout;
