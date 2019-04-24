@@ -35,7 +35,7 @@
 ### 数睿仓库
 
 - [x] [signin](/signin.md)
-- [x] canvas
+- [x] [canvas](/canvas.md)
 - [ ] registered
 - [ ] settings
 
