@@ -14,9 +14,10 @@ export default {
   treeShaking: true,
   context: { URL, TITLE },
   alias: {
-    Components: path.resolve(__dirname, 'src/componets/'),
-    Utils: path.resolve(__dirname, 'src/utils/'),
-    Assets: path.resolve(__dirname, 'src/assets/'),
+    Utils: path.resolve(dirname, 'src/utils/'),
+    Assets: path.resolve(dirname, 'src/assets/'),
+    Components: path.resolve(dirname, 'src/componets/'),
+    CommonLess: path.resolve(dirname, 'src/commonLess.less'),
   },
   publicPath: './',
   plugins: [['umi-plugin-react', umiPluginReact]],
