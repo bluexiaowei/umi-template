@@ -1,18 +1,27 @@
+interface Item {
+  name: string;
+  rename?: string;
+  type?: string;
+  format?(tempValue?: any, tempResult?: any): any;
+  defaultVal?: any;
+  children?: Item[];
+}
+
 /**
  * 格式化数据
  * @param data 数据源
  * @param rules 格式化规则
  */
-function formatData(data, rules, defaultVal) {
+function formatData(data: any, rules: Item[], defaultVal?: any) {
   if (Object.prototype.toString.call(data) === '[object Object]') {
-    return handleObj(data, rules);
+    return handleObj(data, rules, defaultVal);
   } else if (Array.isArray(data)) {
     return data.map(function(item) {
-      return formatData(item, rules);
+      return formatData(item, rules, defaultVal);
     });
   }
 }
-function handleObj(data, rules, defaultVal) {
+function handleObj(data: any, rules: Item[], defaultVal?: any) {
   const tempResult = {};
   rules.forEach(function(item) {
     let tempValue;
@@ -59,8 +68,8 @@ function handleObj(data, rules, defaultVal) {
  * 转换会数字类型
  * @param value 需要转换的值
  */
-function translateNum(value) {
-  function strToNum(value) {
+function translateNum(value: any) {
+  function strToNum(value: any) {
     return isNaN(parseFloat(value)) ? 0 : parseFloat(value);
   }
   return typeof value === 'string' ? strToNum(value) : value;
@@ -70,7 +79,7 @@ function translateNum(value) {
  * @param value
  * @return 转换后的字符串
  */
-function translateStr(value) {
+function translateStr(value: any) {
   return `${value}`;
 }
 
