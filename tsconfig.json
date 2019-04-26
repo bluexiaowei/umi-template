@@ -10,8 +10,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@/Assets*": ["src/assets/*"],
+      "@/Data": ["src/data/*"],
       "@/Utils": ["src/utils/*"],
+      "@/Assets*": ["src/assets/*"],
       "@/Components": ["src/components/*"],
       "@/CommonLess": ["src/commonLess.less"]
     },

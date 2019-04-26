@@ -14,6 +14,7 @@ export default {
   treeShaking: true,
   context: { URL, TITLE },
   alias: {
+    Data: path.resolve(dirname, 'src/data/'),
     Utils: path.resolve(dirname, 'src/utils/'),
     Assets: path.resolve(dirname, 'src/assets/'),
     Components: path.resolve(dirname, 'src/componets/'),
