@@ -5,12 +5,7 @@ const request = axios.create();
 
 request.interceptors.response.use(
   function(response) {
-    const { data } = response;
-    if (data.success) {
-      return data;
-    } else {
-      return Promise.reject(data);
-    }
+    return response.data || { success: false, message: '未知错误' };
   },
   function(error) {
     let message = '未知错误';
