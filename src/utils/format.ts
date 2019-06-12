@@ -41,19 +41,19 @@ function handleObj(data: any, rules: Item[], defaultVal?: any) {
       }
     }
 
-    if ('format' in item) {
-      const formatValue = item.format(tempValue, tempResult);
-      tempValue = formatValue === undefined ? tempValue : formatValue;
-    } else if ('children' in item && Array.isArray(item.children)) {
-      tempValue = formatData(tempValue, item.children);
-    }
-
     if ('defaultVal' in item && tempValue === undefined) {
       tempValue = item.defaultVal;
     }
 
     if (defaultVal !== undefined) {
       tempValue = tempValue === undefined ? defaultVal : tempValue;
+    }
+
+    if ('format' in item) {
+      const formatValue = item.format(tempValue, tempResult);
+      tempValue = formatValue;
+    } else if ('children' in item && Array.isArray(item.children)) {
+      tempValue = formatData(tempValue, item.children);
     }
 
     if ('rename' in item) {

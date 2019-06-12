@@ -132,21 +132,23 @@ class StageEx extends React.Component<StageExPopos> {
       <div ref={this.container} className={styles.container}>
         <ToolBar menus={this.tools} onClick={this.barClick} selectKey={toolKey} />
         <KonvaEX.Stage {...stageOpt} {...stageProps} ref={this.stage} name="stage">
-          {/* tslint:disable-next-line:jsx-no-multiline-js */}
           <Area
             params={this.createAreaParams(stageOpt)[0]}
-            children={this.renderAreaDef(data)}
             BGImage={BGImage}
             selectedId={selectedId}
             transformer={true}
-          />
+          >
+            {this.renderAreaDef(data)}
+          </Area>
+
           <Area
             params={this.createAreaParams(stageOpt)[1]}
-            children={this.renderAreaDef(data)}
             BGImage={BGImage}
             selectedId={selectedId}
             listening={false}
-          />
+          >
+            {this.renderAreaDef(data)}
+          </Area>
         </KonvaEX.Stage>
       </div>
     );
@@ -166,9 +168,9 @@ class StageEx extends React.Component<StageExPopos> {
 
   // 生成对应的操作区域参数。
   createAreaParams = (params: StageExParams): any => {
-    const NAME = 'area';
-    const PADDING: number = 1;
-    const BORDER_WIDTH: number = ElementConst.strokeWidth;
+    const NAME: string = 'area'; // 标签名称
+    const PADDING: number = 1; // 内间距
+    const BORDER_WIDTH: number = ElementConst.strokeWidth; // 边框
     const SPACING: number = 2;
     const { width, height, total, mode } = params;
 
@@ -220,13 +222,19 @@ class StageEx extends React.Component<StageExPopos> {
     if (!src) {
       return;
     }
+
+    this.setState({ BGImage: undefined });
+
     const image = new Image();
+
     image.src = src;
+
     image.onload = e => {
       this.setState({ BGImage: image }, () => {
         fullView(this.stage.current, false);
       });
     };
+
     image.onerror = e => {
       this.setState({ BGImage: false });
     };
