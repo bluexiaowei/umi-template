@@ -1,7 +1,7 @@
 {
-  "name": "@umi-block/canvas",
+  "name": "@shurui-block/canvas",
   "version": "0.0.1",
-  "description": "canvas 画布操作",
+  "description": "",
   "main": "src/index.js",
   "authors": {
     "name": "",
@@ -20,11 +20,13 @@
     "screenfull": "^4.2.0"
   },
   "devDependencies": {
+    "umi": "^2.0.0",
     "@types/lodash": "^4.14.123",
     "@types/react": "^16.8.13",
     "@types/screenfull": "^4.1.0",
-    "umi": "^2.0.0",
-    "umi-plugin-block-dev": "^1.0.0"
-  },
+    "umi-plugin-block-dev": "^2.0.0",
+    "umi-types": "^0.2.0"
+    
+    },
   "license": "MIT"
 }
