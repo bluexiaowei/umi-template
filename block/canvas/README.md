@@ -1,6 +1,6 @@
 # @umi-material/canvas
 
-canvas 画布操作
+
 
 ## Usage
 
