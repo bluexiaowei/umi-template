@@ -8,7 +8,7 @@ class CanvasPage extends React.Component {
   state = {
     boxList: [],
     imageSRC:
-      'http://shuruitech.net:16874/static/processed_SH_2_a7b93b6a06735bb7cfdae6d2c176e1d2_420190222142311M2913513010019.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NTU3NDAxMDAsInVzZXJfaWQiOjIsImV4cCI6MTU1NTc4MzMwMH0.iOcivl1uSAopG8P51tWCXdT8mHzYINYF9WauzKkueUw',
+      'http://192.168.198.207:8071/static/processed_test1.2_47dc9d6f14a6341b3535ab9325771960_zss_05.jpg',
   };
 
   componentDidMount() {
