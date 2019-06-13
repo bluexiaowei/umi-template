@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import Link from 'umi/link';
 import { formatMessage } from 'umi/locale';
-import { Row, Col, Form, Input, Button, Divider, message } from 'antd';
+import { Row, Col, Form, Input, Button, Divider, message, Alert } from 'antd';
 
 import styles from './index.less';
 
@@ -20,6 +20,8 @@ class Signin extends React.PureComponent {
         <Form className={styles.loginForm} autoComplete="off">
           <Divider>Test Title</Divider>
 
+          <Alert type="success" message="admin/admin" style={{ marginBottom: 10 }} />
+
           <FormItem>
             {getFieldDecorator('account', {
               rules: [{ required: true, message: formatMessage({ id: 'FORM_ACCOUNT_HINT' }) }],
@@ -33,7 +35,7 @@ class Signin extends React.PureComponent {
                 type="password"
                 placeholder={formatMessage({ id: 'PASSWORD' })}
                 onPressEnter={this.submitForm}
-              />
+              />,
             )}
           </FormItem>
 
