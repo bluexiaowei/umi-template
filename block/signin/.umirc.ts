@@ -1,3 +1,4 @@
+import { IConfig } from 'umi-types';
 const path = require('path');
 const baseModulesPath = path.resolve(__dirname, '../../src/');
 const umiPluginReact = {
@@ -6,10 +7,8 @@ const umiPluginReact = {
   locale: true,
   routes: { exclude: [/components/, /model/, /services/] },
 };
-
 const umiPluginBlockDev = {};
-
-export default {
+const config: IConfig = {
   alias: {
     Components: path.resolve(baseModulesPath, 'componets'),
     Utils: path.resolve(baseModulesPath, 'utils'),
@@ -17,3 +16,5 @@ export default {
   },
   plugins: [['umi-plugin-react', umiPluginReact], ['umi-plugin-block-dev', umiPluginBlockDev]],
 };
+
+export default config;

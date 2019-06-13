@@ -1,13 +1,8 @@
 # @umi-material/signin
 
-
+登录模块
 
 ## Usage
-
 ```sh
-umi block https://github.com/umijs/umi-blocks/tree/master/signin
+npx umi block add https://gitlab.com/bluexiaowei/umi-template/tree/master/block/canvas
 ```
-
-## LICENSE
-
-MIT
