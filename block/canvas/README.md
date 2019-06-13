@@ -1,13 +1,9 @@
-# @umi-material/canvas
+# @shurui/canvas
 
 
 
 ## Usage
 
 ```sh
-umi block https://github.com/umijs/umi-blocks/tree/master/canvas
+npx umi block add https://gitlab.com/bluexiaowei/umi-template/tree/master/block/canvas
 ```
-
-## LICENSE
-
-MIT
