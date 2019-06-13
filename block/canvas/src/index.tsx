@@ -2,9 +2,6 @@ import * as React from 'react';
 import Stage from './components/Stage/index';
 
 class CanvasPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   state = {
     boxList: [],
     imageSRC:
