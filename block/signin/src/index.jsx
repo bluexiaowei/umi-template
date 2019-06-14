@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
-import Link from 'umi/link';
-import { formatMessage } from 'umi/locale';
+import { Link } from 'umi';
+import { formatMessage } from 'umi-plugin-locale';
 import { Row, Col, Form, Input, Button, Divider, message, Alert } from 'antd';
 
 import styles from './index.less';

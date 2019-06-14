@@ -20,14 +20,14 @@ export default {
   subscriptions: {
     init({ dispatch, history }) {
       dispatch({ type: 'app/STATE', payload: { user: storage.local.get('user') } });
-      history.listen(({ pathname }) => {
-        if (!['/signin'].includes(pathname)) {
-          const user = storage.local.get('user');
-          if (!storage.cookie.get('token') || !user || !user.token) {
-            history.push('/signin');
-          }
-        }
-      });
+      // history.listen(({ pathname }) => {
+      //   if (!['/signin'].includes(pathname)) {
+      //     const user = storage.local.get('user');
+      //     if (!storage.cookie.get('token') || !user || !user.token) {
+      //       history.push('/signin');
+      //     }
+      //   }
+      // });
     },
   },
 };
