@@ -7,6 +7,7 @@ const umiPluginReact = {
   antd: true,
   dva: true,
   title: TITLE,
+  local: true,
   routes: {
     exclude: [/components/, /model[s]?/, /service[s]?/, /locales/, /index.d.ts/],
   },
