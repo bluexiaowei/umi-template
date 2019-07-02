@@ -9,12 +9,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@/Data": ["src/data/*"],
-      "@/Utils": ["src/utils/*"],
-      "@/Assets*": ["src/assets/*"],
-      "@/Components": ["src/components/*"],
-      "@/CommonLess": ["src/commonLess.less"]
+      "@/*": ["src/*"]
     },
     "allowSyntheticDefaultImports": true
   }
