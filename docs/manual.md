@@ -2,7 +2,7 @@
 
 ## 前言
 
-由于项目众多希望建立一些指导或者是规范，使代码规范和可移植。
+由于项目众多希望建立一些指导或者是规范，使代码规范并可移植。
 
 本文以 `Typescript` 为讲解，这只是可选项。
 
@@ -233,4 +233,3 @@ class Index extends React.Component<IndexD.Props> {
 
 export default Index;
 ```
-
