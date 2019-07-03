@@ -15,7 +15,7 @@
 
 根据 `umi` 的路由约定，使得目录结构清晰，代码分块。
 
-路由有多个兄弟路由的时候使用 `user/index/index.tsx` 替代 `user/index.tsx`。
+有多个兄弟路由的时候使用 `user/index/index.tsx` 替代 `user/index.tsx`。
 
 多路由
 
@@ -187,9 +187,9 @@ const model: Model = {
 
 路由或组件文件。
 
-统一使用 `class` 类来声明 `React` 组件 (个人认为可以舍弃一点性能问题，使得文件格式统一，这样有利于伙伴之间的代码审核)。
+统一使用 `class` 类来声明 `React` 组件 (个人认为可以舍弃一点性能，使得文件格式统一，这样有利于伙伴之间的代码审核)。
 
-如果一个文件中只有一个 `class` 请使用 `Index` 作为组件名称。应为你的文件名其实已经是你的组件名称。或者使用 'displayName' 用于显示调试。
+如果一个文件中只有一个 `class` 请使用 `Index` 作为组件名称。文件名其实已经是你的组件名称。或者使用 'displayName' 用于调试时显示。
 
 ```tsx
 // @page/user/index.tsx
