@@ -6,7 +6,7 @@ import * as TS from './index.d';
 const styles = require('./index.less');
 class Index extends React.Component<TS.Props> {
   render() {
-    const { children, user = {} } = this.props;
+    const { children, user = { username: '' } } = this.props;
 
     return (
       <Layout className={styles.container}>
@@ -51,11 +51,13 @@ class Index extends React.Component<TS.Props> {
     );
   }
 
-  onDropdownClick = ({ key }) => {
+  onDropdownClick = ({ key }: any) => {
     if (key === 'logout') {
       this.props.dispatch({ type: 'user/logout' });
     }
   };
 }
 
-export default connect(({ user }: any) => user)(Index);
+const ClassicLayout: any = connect(({ user }: any) => user)(Index);
+
+export default ClassicLayout;
