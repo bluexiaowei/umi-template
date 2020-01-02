@@ -8,14 +8,19 @@ const styles = require('./index.less');
 const { Item: FormItem } = Form;
 
 const Signin = (props: TS.Props) => {
-  const { form, loading } = props;
+  const { form, loading, history } = props;
   const { getFieldDecorator, validateFields } = form;
 
   const submitForm = useCallback(() => {
     validateFields((err, values) => {
       if (err) return;
 
-      props.dispatch({ type: 'user/signin', payload: values }).catch(message.error);
+      props
+        .dispatch({ type: 'user/signin', payload: values })
+        .then(() => {
+          history.push('/');
+        })
+        .catch(message.error);
     });
   }, []);
 

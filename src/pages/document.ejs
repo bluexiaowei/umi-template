@@ -4,13 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <link rel="icon" href="https://gitlab.com/shuruitech-wangxiaowei/umi-template/raw/master/src/assets/images/shurui-logo.png" type="image/x-icon">
   <title><%= context.TITLE %></title>
 </head>
 <body>
   <script>
     window.URL = "<%= context.URL %>";
-    window.version = "<%= context.VERSION %>"
+    window.VERSION = "<%= context.VERSION %>"
+    window.TITLE = "<%= context.TITLE %>"
+    window.AUTH_NAME = "<%= context.AUTH_NAME %>"
+    window.PROJECT_NAME = "<%= context.PROJECT_NAME %>"
   </script>
   
   <div id="root"></div>

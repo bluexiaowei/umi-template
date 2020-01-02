@@ -9,7 +9,7 @@ const API = {
         id: 1,
         name: '@cname',
         username: '@maile',
-        token: '',
+        token: '123456',
         exp: '2018-12-12 00:00:00',
         is_admin: true,
         applications: [

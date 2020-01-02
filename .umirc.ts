@@ -1,4 +1,5 @@
 import { IConfig } from 'umi-types';
+
 const packageInfo = require('./package.json');
 
 const DEF_CONFIG = {
@@ -9,6 +10,7 @@ const DEF_CONFIG = {
   PROJECT_NAME: 'umi-template',
 };
 
+// ref: https://umijs.org/zh/plugin/umi-plugin-react.html
 const umiPluginRect = {
   antd: true,
   dva: true,
@@ -33,7 +35,6 @@ const config: IConfig = {
   publicPath: './',
   treeShaking: true,
   context: DEF_CONFIG,
-  define: DEF_CONFIG,
   // proxy: {
   //   '/api': {
   //     target: '/',

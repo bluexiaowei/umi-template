@@ -6,9 +6,10 @@ interface Define {
 }
 
 const WEBPACK_DEFINE: Define = {
-  URL: URL,
-  TITLE: TITLE,
-  AUTH_NAME: AUTH_NAME,
-  PROJECT_NAME: PROJECT_NAME,
+  URL: window.URL,
+  TITLE: window.TITLE,
+  AUTH_NAME: window.AUTH_NAME,
+  PROJECT_NAME: window.PROJECT_NAME,
+  VERSION: window.VERSION,
 };
 export default WEBPACK_DEFINE;

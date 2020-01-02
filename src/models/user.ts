@@ -45,8 +45,6 @@ const model: Model = {
       storage.cookie.set('token', token, 0.5);
 
       storage.local.set('user', res.data);
-
-      router.push('/');
     },
     // 用户退出登录
     *logout(__, { put }) {
@@ -93,13 +91,12 @@ const model: Model = {
 
       // 监听路由判断是否需要登录
       history.listen(({ pathname }) => {
-        const ignorPath: string[] = ['signin'];
-
+        const ignorPath: string[] = ['/signin'];
+        // console.log(1234);
         if (ignorPath.some(item => new RegExp(item, 'g').test(pathname))) return;
-
         const user: TS.ResSignin = storage.local.get('user');
 
-        if (!storage.cookie.get('token') || allowSignin(user.applications, context.AUTH_NAME)) {
+        if (!storage.cookie.get('token') || !allowSignin(user.applications, context.AUTH_NAME)) {
           router.push('/signin');
           return;
         }
