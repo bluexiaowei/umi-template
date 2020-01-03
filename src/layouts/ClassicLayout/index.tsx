@@ -45,7 +45,9 @@ class Index extends React.Component<TS.Props> {
             </Row>
           </Layout.Header>
 
-          <Layout.Content>{children}</Layout.Content>
+          <Layout.Content>
+            <div style={{ position: 'absolute', width: '100%', height: '100%' }}>{children}</div>
+          </Layout.Content>
         </Layout>
       </Layout>
     );

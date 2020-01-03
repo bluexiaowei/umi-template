@@ -1,6 +1,12 @@
 html,
 body,
 #root {
+  min-width: 1440px;
   height: 100%;
   margin: 0;
+  overflow: auto;
+}
+
+.ant-layout-content {
+  position: relative;
 }
