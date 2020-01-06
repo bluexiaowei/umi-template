@@ -85,6 +85,9 @@ const model: Model = {
 
       // 监听路由判断是否需要登录
       history.listen(({ pathname }) => {
+        if (context.IGNORE_PATH[0] === '*') {
+          return;
+        }
         // 判断该路径是否需要判断登录
         if (context.IGNORE_PATH.some(item => new RegExp(item, 'g').test(pathname))) return;
 
