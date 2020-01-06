@@ -32,11 +32,11 @@ const layout = (props: Props): any => {
     if (!isEmpty(user)) return;
 
     const token = storage.cookie.get('token');
-    if (token && isEmpty(user)) {
+
+    if (token && isEmpty(user) && context.IGNORE_PATH[0] !== '*') {
       dispatch({ type: 'user/getUserInfo', payload: { token } }).catch(message.error);
     }
   }, [user]);
-  // console.log(, 'user');
 
   if (isIgnorePath(pathname) || (user && isAllow(user.applications, context.AUTH_NAME))) {
     return (
@@ -62,6 +62,8 @@ function renderPage({ blankPath, pathname, children, other }: RenderPageParams) 
 }
 
 function isIgnorePath(pathname: string) {
+  if (context.IGNORE_PATH[0] === '*') return true;
+
   return context.IGNORE_PATH.some(item => pathname.includes(item));
 }
 

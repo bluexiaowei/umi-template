@@ -74,7 +74,9 @@ const model: Model = {
 
   subscriptions: {
     init({ dispatch, history }) {
-      // storage.cookie.set('token', '123456789');
+      if (context.IGNORE_PATH[0] === '*') {
+        storage.cookie.set('token', 'true');
+      }
 
       // 没有 token 就登录
       if (!storage.cookie.get('token')) {
