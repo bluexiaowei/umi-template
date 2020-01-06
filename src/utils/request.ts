@@ -3,9 +3,13 @@ import storage from '@/utils/storage';
 import axios from 'axios';
 import get from 'lodash/get';
 import qs from 'qs';
+import { toCamel } from '@/utils/namingStyle';
 
 const tempWindow: any = window;
-const newAxios = axios.create({ baseURL: tempWindow.URL });
+const newAxios = axios.create({
+  baseURL: tempWindow.URL,
+  transformResponse: [(data: string) => JSON.parse(toCamel(data))],
+});
 
 newAxios.interceptors.request.use(
   function success(config) {

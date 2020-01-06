@@ -3,6 +3,7 @@ interface Define {
   TITLE: string;
   AUTH_NAME: string;
   PROJECT_NAME: string;
+  IGNORE_PATH: string[];
 }
 
 const WEBPACK_DEFINE: Define = {
@@ -11,5 +12,6 @@ const WEBPACK_DEFINE: Define = {
   AUTH_NAME: window.AUTH_NAME,
   PROJECT_NAME: window.PROJECT_NAME,
   VERSION: window.VERSION,
+  IGNORE_PATH: ['/signin'],
 };
 export default WEBPACK_DEFINE;
