@@ -67,8 +67,10 @@ const model: Model = {
         storage.cookie.set('token', 'true');
       }
 
-      // 没有 token 就登录
+      if (isIgnorePath(history.location.pathname)) return;
+
       if (isEmpty(storage.cookie.get('token'))) {
+        // 没有 token 就登录
         const { location } = history;
 
         history.push({ pathname: '/signin', search: `form=${location.pathname}` });
