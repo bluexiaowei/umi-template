@@ -16,6 +16,15 @@
 6. 新增内部变量。
 7. 对本地存储进行项目名区分。
 
+## 使用
+
+```shell
+mkdir myApp && cd myApp
+npx create shurui-cli
+npm install
+npm start
+```
+
 ## 资料
 
 - [typescript](https://www.tslang.cn/)
