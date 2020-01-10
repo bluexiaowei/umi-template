@@ -7,7 +7,7 @@ import { ConfigProvider, message } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 import { connect } from 'dva';
 import { History, Location } from 'history';
-import isEmpty from 'lodash/isEmpty';
+import _ from 'lodash';
 import React, { useLayoutEffect } from 'react';
 import BlankLayout from './BlankLayout';
 import ClassicLayout from './ClassicLayout';
@@ -34,12 +34,12 @@ const layout = (props: Props): any => {
 
     const token = storage.cookie.get('token');
 
-    if (isEmpty(token)) return;
+    if (_.isEmpty(token)) return;
 
-    if (isEmpty(user)) {
+    if (_.isEmpty(user)) {
       dispatch({ type: 'user/getUserInfo', payload: { token } }).catch(message.error);
     }
-  }, [isEmpty(user)]);
+  }, [_.isEmpty(user)]);
 
   if (isIgnore(pathname) || (user && isAllow(user.applications, context.AUTH_NAME))) {
     return (

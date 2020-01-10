@@ -6,7 +6,7 @@ import storage from '@/utils/storage';
 import { Model } from 'dva';
 import router from 'umi/router';
 import * as TS from './user.d';
-import isEmpty from 'lodash/isEmpty';
+import _ from 'lodash';
 
 const defState: TS.ModelState = {
   projectName: context.PROJECT_NAME,
@@ -69,7 +69,7 @@ const model: Model = {
 
       if (isIgnorePath(history.location.pathname)) return;
 
-      if (isEmpty(storage.cookie.get('token'))) {
+      if (_.isEmpty(storage.cookie.get('token'))) {
         // 没有 token 就登录
         const { location } = history;
 

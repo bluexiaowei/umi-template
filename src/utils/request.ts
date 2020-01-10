@@ -1,7 +1,7 @@
 import codeMsgJSON from '@/json/codeMsg.json';
 import storage from '@/utils/storage';
 import axios from 'axios';
-import get from 'lodash/get';
+import _ from 'lodash';
 import qs from 'qs';
 import { toCamel } from '@/utils/namingStyle';
 
@@ -28,12 +28,12 @@ newAxios.interceptors.request.use(
 
 newAxios.interceptors.response.use(
   function success(response) {
-    return get(response, 'data', { success: true, data: {} });
+    return _.get(response, 'data', { success: true, data: {} });
   },
   function error(error) {
     if ('response' in error) {
       let isFind = false;
-      const data = get(error, 'response.data', {
+      const data = _.get(error, 'response.data', {
         success: false,
         message: '未知错误',
         code: undefined,
@@ -50,7 +50,7 @@ newAxios.interceptors.response.use(
       }
 
       if (!isFind) {
-        data.message = JSON.stringify(get(error, 'response.data.message')) || '未知错误';
+        data.message = JSON.stringify(_.get(error, 'response.data.message')) || '未知错误';
       }
 
       // 有返回值
