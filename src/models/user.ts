@@ -63,7 +63,7 @@ const model: Model = {
 
   subscriptions: {
     init({ history }) {
-      if (isIgnorePath('*')) {
+      if (isIgnorePath()) {
         storage.cookie.set('token', 'true');
       }
 

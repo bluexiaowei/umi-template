@@ -27,9 +27,27 @@ const umiPluginRect = {
   },
 };
 
+// 目前只支持 207 cdn 只支持 axios lodash moment react react-dom react-router react-redux 加速
+// 如需添加需要在 207 cdn 下添加 `${name}.min.js` 文件
+const umiPluginReplaceCdn = {
+  template: 'http://192.168.198.207/cdn/${name}.min.js',
+  externals: [
+    { name: 'axios', var: 'window.axios' },
+    { name: 'lodash', var: 'window._' },
+    { name: 'moment', var: 'window.moment' },
+    { name: 'react', var: 'window.react' },
+    { name: 'react-dom', var: 'window.react' },
+    { name: 'react-router', var: 'window.ReactRouter' },
+    { name: 'react-redux', var: 'window.ReactRedux' },
+  ],
+};
+
 // ref: https://umijs.org/config/
 const config: IConfig = {
-  plugins: [['umi-plugin-react', umiPluginRect]],
+  plugins: [
+    ['umi-plugin-react', umiPluginRect],
+    ['/Users/xiaowei/Shurui/umi-plugin-replace-cdn/src/index.ts', umiPluginReplaceCdn],
+  ],
   hash: true,
   history: 'hash',
   publicPath: './',
