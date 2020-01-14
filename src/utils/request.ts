@@ -8,7 +8,15 @@ import { toCamel } from '@/utils/namingStyle';
 const tempWindow: any = window;
 const newAxios = axios.create({
   baseURL: tempWindow.URL,
-  transformResponse: [(data: string) => JSON.parse(toCamel(data))],
+  transformResponse: [
+    (data: string = '') => {
+      try {
+        return JSON.parse(toCamel(data));
+      } catch (error) {
+        return { success: false, message: '未知错误' };
+      }
+    },
+  ],
 });
 
 newAxios.interceptors.request.use(

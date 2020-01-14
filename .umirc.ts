@@ -35,8 +35,8 @@ const umiPluginReplaceCdn = {
     { name: 'axios', var: 'window.axios' },
     { name: 'lodash', var: 'window._' },
     { name: 'moment', var: 'window.moment' },
-    { name: 'react', var: 'window.react' },
-    { name: 'react-dom', var: 'window.react' },
+    { name: 'react', var: 'window.React' },
+    { name: 'react-dom', var: 'window.ReactDOM' },
     { name: 'react-router', var: 'window.ReactRouter' },
     { name: 'react-redux', var: 'window.ReactRedux' },
   ],
@@ -46,7 +46,7 @@ const umiPluginReplaceCdn = {
 const config: IConfig = {
   plugins: [
     ['umi-plugin-react', umiPluginRect],
-    ['/Users/xiaowei/Shurui/umi-plugin-replace-cdn/src/index.ts', umiPluginReplaceCdn],
+    // ['umi-plugin-replace-cdn', umiPluginReplaceCdn],
   ],
   hash: true,
   history: 'hash',
@@ -59,6 +59,7 @@ const config: IConfig = {
   //     pathRewrite: { '^/api': '' },
   //   },
   // },
+  copy: [{ from: './context.js', to: '/src/publish' }],
 };
 
 export default config;

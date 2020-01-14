@@ -44,7 +44,12 @@ const layout = (props: Props): any => {
   if (isIgnore(pathname) || (user && isAllow(user.applications, context.AUTH_NAME))) {
     return (
       <ConfigProvider locale={zhCN}>
-        {renderPage({ blankPath: ['/blank', 'signin'], pathname, children, other })}
+        {renderPage({
+          blankPath: ['/blank', 'signin'],
+          pathname,
+          children,
+          other: { ...other, user },
+        })}
       </ConfigProvider>
     );
   }
