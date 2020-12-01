@@ -17,14 +17,14 @@ function formatData(data: any, rules: Item[], defVal?: any): any {
   if (Object.prototype.toString.call(data) === '[object Object]') {
     return handleObj(data, rules, defVal);
   } else if (Array.isArray(data)) {
-    return data.map(function(item) {
+    return data.map(function (item) {
       return formatData(item, rules, defVal);
     });
   }
 }
 function handleObj(data: any, rules: Item[], defVal?: any) {
   const tempResult: any = {};
-  rules.forEach(function(item: Item) {
+  rules.forEach(function (item: Item) {
     if (!('name' in item)) {
       return;
     }
