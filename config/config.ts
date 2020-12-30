@@ -3,7 +3,7 @@ import routes from './routes';
 import proxy from './proxy';
 import '../public/app-config.js';
 
-const APP_CONFIG = globalThis?.APP_CONFIG;
+const APP_CONFIG: APP_CONFIG = globalThis?.APP_CONFIG;
 
 export default defineConfig({
   routes,
