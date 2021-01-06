@@ -1,5 +1,5 @@
 var APP_CONFIG = {
-  apiPrefix: '/api/danube_v2',
+  apiPrefix: '/api/fullhouse',
   appTitle: '前端模版工具',
   codename: 'umi-template',
 };

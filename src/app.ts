@@ -1,9 +1,10 @@
 import RightContent from '@/components/RightContent';
-import { RequestConfig } from 'umi';
+import autoDownloadFile from '@/utils/autoDownloadFile';
 import config from '@/utils/config';
+import set from 'lodash/set';
+import { RequestConfig } from 'umi';
 import cookie from './utils/cookie';
 import storge from './utils/storge';
-import set from 'lodash/set';
 
 export async function getInitialState() {
   if (cookie.get('token')) {
@@ -28,6 +29,7 @@ export const request: RequestConfig = {
       };
     },
   },
+
   middlewares: [
     async function addAuth(ctx, next) {
       const user = storge.get('user');
@@ -37,4 +39,5 @@ export const request: RequestConfig = {
       await next();
     },
   ],
+  responseInterceptors: [autoDownloadFile],
 };
