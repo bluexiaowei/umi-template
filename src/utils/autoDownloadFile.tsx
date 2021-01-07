@@ -8,7 +8,7 @@ export default function (res: Response) {
     const filenameDis =
       disposition.split(';').filter((item) => /filename/.test(item))[0] || '';
 
-    const filename = filenameDis ? filenameDis.split('=')[1] : '';
+    const filename = filenameDis ? decodeURI(filenameDis.split('=')[1]) : '';
 
     res
       .clone()
