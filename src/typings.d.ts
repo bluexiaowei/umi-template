@@ -2,6 +2,9 @@ interface APP_CONFIG {
   apiPrefix: string;
   appTitle: string;
   codename: string;
+  patternPWD: RegExp;
+  uploadMaxLength: number;
+  uploadSingleSize: number;
 }
 
 interface Window {

@@ -1,12 +1,19 @@
-import cookies from 'js-cookie';
-import { Redirect, history } from 'umi';
+import { Redirect, history, useModel } from 'umi';
+import qs from 'qs';
 
-export default (props: any) => {
-  const token = cookies.get('token');
+export default function (props: any) {
+  const { initialState } = useModel('@@initialState');
 
-  if (Boolean(token)) {
+  if (Boolean(initialState?.token)) {
     return props.children;
-  } else if (history.location.pathname !== '/signin') {
-    return <Redirect to="/signin" />;
+  } else if (history.location.pathname !== '/login') {
+    return (
+      <Redirect
+        to={{
+          pathname: '/login',
+          search: qs.stringify({ redirect: history.location.pathname }),
+        }}
+      />
+    );
   }
-};
+}

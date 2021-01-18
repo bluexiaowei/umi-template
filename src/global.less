@@ -1,0 +1,42 @@
+@import '~antd/lib/style/themes/default.less';
+
+#root {
+  height: 100%;
+  min-width: 1440px;
+  overflow: auto;
+  font-family: PingFangSC-Regular;
+}
+
+.ant-btn-warning {
+  @btn-warning-color: #faad14;
+
+  background-color: @btn-warning-color;
+  border-color: @btn-warning-color;
+  color: #ffffff;
+  &:hover,
+  &:focus {
+    @btn-warning-bg-palette: #db9200;
+
+    background-color: @btn-warning-bg-palette;
+    box-shadow: @btn-warning-bg-palette;
+    border-color: @btn-warning-bg-palette;
+    color: #fff;
+  }
+}
+
+.ant-btn-info {
+  @btn-info-color: #3a6aaa;
+
+  background-color: @btn-info-color;
+  border-color: @btn-info-color;
+  color: #ffffff;
+  &:hover,
+  &:focus {
+    @btn-info-bg-palette: #315a90;
+
+    background-color: @btn-info-bg-palette;
+    box-shadow: @btn-info-bg-palette;
+    border-color: @btn-info-bg-palette;
+    color: #fff;
+  }
+}

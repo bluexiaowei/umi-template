@@ -1,17 +1,13 @@
-export default function (res: Response) {
-  const { body, headers } = res;
+export default function (response: Response) {
+  const _response = response.clone();
+  const { headers } = _response;
+  const disposition: string = headers.get('content-disposition') || '';
 
-  const contentType = headers.get('content-type') || '';
-  const disposition = headers.get('content-disposition') || '';
+  if (/filename/i.test(disposition)) {
+    const match = disposition.match(/filename="([\S]+)"/i);
+    const filename = match ? match[1] : '未知文件';
 
-  if (contentType === 'application/octet-stream' && body) {
-    const filenameDis =
-      disposition.split(';').filter((item) => /filename/.test(item))[0] || '';
-
-    const filename = filenameDis ? decodeURI(filenameDis.split('=')[1]) : '';
-
-    res
-      .clone()
+    _response
       .blob()
       .then((blob) => {
         if (navigator.msSaveBlob) {
@@ -31,5 +27,5 @@ export default function (res: Response) {
       .catch((err) => console.log(err));
   }
 
-  return res;
+  return response;
 }

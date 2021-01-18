@@ -1,9 +1,14 @@
-import { Row, Col, Dropdown, Menu, Avatar } from 'antd';
+import { Row, Col, Dropdown, Menu, Avatar, Space } from 'antd';
+import { useMemo } from 'react';
 import { useModel } from 'umi';
 
 export default () => {
-  const { setTrue, logout } = useModel('modal_password');
   const { initialState } = useModel('@@initialState');
+  const { setTrue, logout } = useModel('modal_password');
+  const name = useMemo(() => {
+    const name: string = initialState?.name || '';
+    return name[0];
+  }, [initialState?.name]);
 
   return (
     <Row gutter={20}>
@@ -16,9 +21,13 @@ export default () => {
             </Menu>
           }
         >
-          <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
-            {initialState?.user_name}
-          </Avatar>
+          <Space>
+            <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
+              {name}
+            </Avatar>
+
+            {initialState?.name}
+          </Space>
         </Dropdown>
       </Col>
     </Row>

@@ -1,4 +1,5 @@
 import cookie from '@/utils/cookie';
+import storge from '@/utils/storge';
 import { useBoolean } from 'ahooks';
 import { history } from 'umi';
 
@@ -10,14 +11,17 @@ export default () => {
     setTrue,
     setFalse,
     logout: () => {
+      setFalse();
+
       history.replace({
         pathname: '/login',
         query: {
-          form: history.location.pathname,
+          redirect: history.location.pathname,
         },
       });
 
       cookie.remove('token');
+      storge.remove('user');
     },
   };
 };

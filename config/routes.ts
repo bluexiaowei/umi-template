@@ -1,11 +1,12 @@
 export default [
+  { path: '/login', layout: false, component: '@/pages/login' },
   {
     path: '/',
     component: '@/Layout/index',
     flatMenu: true,
+    wrappers: ['@/wrappers/auth'],
     routes: [
       { path: '/', component: '@/pages/index' },
-      { path: '/login', layout: false, component: '@/pages/login' },
       {
         path: '/setting',
         component: '@/pages/setting',
