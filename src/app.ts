@@ -56,5 +56,5 @@ export const request: RequestConfig = {
       await next();
     },
   ],
-  responseInterceptors: [autoDownloadFile],
+  // responseInterceptors: [autoDownloadFile],
 };
