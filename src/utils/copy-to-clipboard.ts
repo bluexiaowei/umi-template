@@ -1,7 +1,7 @@
 export default (text: string, callback: (text: string) => void) => {
   const textArea: HTMLTextAreaElement = document.createElement('textarea');
 
-  textArea.setAttribute('value', text);
+  textArea.innerHTML = text;
   textArea.style.position = 'abou';
   textArea.style.pointerEvents = ' none';
   textArea.style.opacity = '0';
