@@ -1,13 +1,13 @@
+import contentDisposition from 'content-disposition';
 export default function (response: Response) {
-  const _response = response.clone();
-  const { headers } = _response;
-  const disposition: string = headers.get('content-disposition') || '';
+  const _res = response.clone();
+  const { headers } = _res;
+  const content_disposition = headers.get('content-disposition');
 
-  if (/filename/i.test(disposition)) {
-    const match = disposition.match(/filename="([\S]+)"/i);
-    const filename = match ? match[1] : '未知文件';
-
-    _response
+  if (content_disposition) {
+    const { parameters } = contentDisposition.parse(content_disposition);
+    const filename = parameters.filename || parameters.fileName;
+    _res
       .blob()
       .then((blob) => {
         if (navigator.msSaveBlob) {

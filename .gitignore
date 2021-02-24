@@ -9,6 +9,7 @@
 
 # production
 /dist
+/public/app-config.js
 
 # misc
 .DS_Store

@@ -1,5 +1,5 @@
-const config: APP_CONFIG = globalThis
-  ? globalThis?.APP_CONFIG
-  : window?.APP_CONFIG;
+import get from 'lodash/get';
+
+const config: APP_CONFIG = get(window, 'APP_CONFIG');
 
 export default config;

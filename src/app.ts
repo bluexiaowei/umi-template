@@ -1,5 +1,5 @@
 import RightContent from '@/components/RightContent';
-import autoDownloadFile from '@/utils/autoDownloadFile';
+// import autoDownloadFile from '@/utils/autoDownloadFile';
 import config from '@/utils/config';
 import set from 'lodash/set';
 import { RequestConfig, useAccess } from 'umi';
@@ -56,5 +56,5 @@ export const request: RequestConfig = {
       await next();
     },
   ],
-  responseInterceptors: [autoDownloadFile],
+  // responseInterceptors: [autoDownloadFile],
 };
