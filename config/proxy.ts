@@ -1,6 +1,4 @@
-import '../public/app-config.js';
-
-const APP_CONFIG: APP_CONFIG = globalThis?.APP_CONFIG;
+import APP_CONFIG from './APP_CONFIG';
 
 export default {
   [APP_CONFIG.apiPrefix]: {

@@ -1,18 +1,16 @@
 import { defineConfig } from 'umi';
-import '../public/app-config.js';
+import APP_CONFIG from './APP_CONFIG';
 import proxy from './proxy';
 import routes from './routes';
 import theme from './theme';
-
-const APP_CONFIG: APP_CONFIG = globalThis?.APP_CONFIG;
 
 export default defineConfig({
   routes,
   proxy,
   theme,
-  publicPath: './',
   hash: true,
   locale: {},
+  publicPath: './',
   history: { type: 'hash' },
   scripts: [{ src: './app-config.js' }],
   layout: {
@@ -22,4 +20,6 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
+  copy: ['README.md'],
+  plugins: ['./plugins/umi-plugins-addFile'],
 });

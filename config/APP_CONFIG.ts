@@ -1,4 +1,4 @@
-var APP_CONFIG = {
+export default {
   apiPrefix: '/api/umi-template',
   appTitle: '前端模版工具',
   codename: 'umi-template',
@@ -7,7 +7,3 @@ var APP_CONFIG = {
   uploadMaxLength: 50,
   uploadSingleSize: 20 * 1024 * 1024,
 };
-
-if (globalThis) {
-  globalThis.APP_CONFIG = APP_CONFIG;
-}
