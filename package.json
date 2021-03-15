@@ -6,7 +6,10 @@
     "build": "umi build",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "cz": "npx cz"
+    "cz": "npx cz",
+    "pstart": "pnpx umi dev",
+    "pbuild": "pnpx umi build",
+    "pcz": "pnpx cz"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -21,14 +24,19 @@
   },
   "dependencies": {
     "ahooks": "^2.9.1",
+    "js-cookie": "^2.2.1",
+    "lodash": "^4.17.21",
+    "qs": "^6.9.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "store": "^2.0.12"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.5.0",
     "@ant-design/pro-layout": "^6.5.16",
     "@types/store": "^2.0.2",
     "@umijs/preset-react": "^1.7.12",
+    "@umijs/route-utils": "^1.0.36",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog-chinese": "^2.3.0",
     "husky": "^4.3.0",
