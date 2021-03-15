@@ -50,8 +50,11 @@ export const request: RequestConfig = {
     },
     async function redirectAssets(ctx, next) {
       // 将 @@ 作为定位符重定向到资源文件
+      const url: string = ctx.req.url;
 
-      ctx.req.url = ctx.req.url.split('@@')[1];
+      if (url.includes('@@')) {
+        ctx.req.url = url.split('@@')[1];
+      }
 
       await next();
     },
