@@ -1,6 +1,8 @@
 import RightContent from '@/components/RightContent';
 // import autoDownloadFile from '@/utils/autoDownloadFile';
 import config from '@/utils/config';
+import { message } from 'antd';
+import get from 'lodash/get';
 import set from 'lodash/set';
 import { RequestConfig, useAccess } from 'umi';
 import cookie from './utils/cookie';
@@ -31,12 +33,14 @@ export const layout = {
 export const request: RequestConfig = {
   prefix: config.apiPrefix,
   errorConfig: {
-    adaptor: (resData) => {
-      return {
-        ...resData,
-        data: resData.data,
-        errorMessage: resData.message || '系统错误',
-      };
+    adaptor: (data) => {
+      if (data.message) {
+        message.destroy();
+
+        return { ...data, errorMessage: data.message };
+      }
+
+      return { ...data, showType: 0 };
     },
   },
 
@@ -59,5 +63,22 @@ export const request: RequestConfig = {
       await next();
     },
   ],
-  // responseInterceptors: [autoDownloadFile],
+  responseInterceptors: [
+    // autoDownloadFile,
+    function (response) {
+      const codeMaps = {
+        502: '网关错误。',
+        503: '服务不可用，服务器暂时过载或维护。',
+        504: '网关超时。',
+      };
+
+      if (response.status in codeMaps) {
+        message.destroy();
+
+        message.error(get(codeMaps, response.status, ''));
+      }
+
+      return response;
+    },
+  ],
 };
