@@ -21,12 +21,25 @@ export const layout = {
   postMenuData(menuData: any) {
     const access: any = useAccess();
 
-    return menuData.filter((item: any) => {
-      if (item.access) {
-        return Boolean(access[item.access]);
+      return filterAccessRoutes(menuData);
+
+      function filterAccessRoutes(routes: Array<any>): Array<any> {
+        return routes.map(route => {
+          if ('access' in route) {
+            return { ...route, hideInMenu: !access[route.access] };
+          }
+
+          if (Array.isArray(route.children)) {
+            return {
+              ...route,
+              hideInMenu: false,
+              children: filterAccessRoutes(route.children),
+            };
+          }
+
+          return { ...route, hideInMenu: false };
+        });
       }
-      return true;
-    });
   },
 };
 
